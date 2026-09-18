@@ -1,0 +1,5 @@
+Pixel cat artwork: Mattz Art, as credited by the reference site's site-cat.css.
+Source: https://chenliu-1996.github.io/images/cat/
+Files: IDLE.png, RUN.png, TOY.png (downloaded unchanged, 2026-09-17).
+The reference site identifies the artist; no license text was supplied with these files.
+The movement behavior and surrounding website code are independently implemented.

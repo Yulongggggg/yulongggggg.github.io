@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "preview": "python3 -m http.server 8790 --bind 127.0.0.1 --directory dist",
     "fetch:analytics": "node scripts/fetch-goatcounter-stats.mjs"
   }
 }

@@ -4,8 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: '17 */6 * * *'
 
 permissions:
   contents: read
@@ -28,30 +26,16 @@ jobs:
         with:
           node-version: 22
 
-      - name: Refresh GoatCounter snapshot
-        env:
-          GOATCOUNTER_SITE_URL: https://yulong.goatcounter.com
-          GOATCOUNTER_API_TOKEN: ${{ secrets.GOATCOUNTER_API_TOKEN }}
-        run: node scripts/fetch-goatcounter-stats.mjs
+      - name: Build static homepage
+        run: npm run build
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-
-      - name: Install gems
-        run: |
-          gem install bundler -v 2.5.11
-          bundle _2.5.11_ config set path vendor/bundle
-          bundle _2.5.11_ install
-
-      - name: Build with Jekyll
-        run: bundle _2.5.11_ exec jekyll build
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: ./dist
 
   deploy:
     environment:
