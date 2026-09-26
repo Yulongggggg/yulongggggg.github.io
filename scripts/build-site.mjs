@@ -1,6 +1,7 @@
 import { cp, mkdir, readFile, writeFile, access, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, 'dist');
@@ -41,12 +42,13 @@ const groups = [
 ];
 const publications = groups.map(([id, title, rows, featured]) => `<section class="home-section" id="${id}" aria-labelledby="${id}-title"><h2 class="publication-heading" id="${id}-title">${escape(title)}</h2>${rows.map(p => renderPaper(p, featured)).join('\n')}</section>`).join('\n');
 const template = await readFile(path.join(root, 'site/index.html'), 'utf8');
+const stylesheetVersion = createHash('sha256').update(await readFile(path.join(root, 'site/style.css'))).digest('hex').slice(0, 12);
 if (!template.includes('<!-- PUBLICATIONS -->')) throw new Error('Missing publications marker.');
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const file of ['style.css', 'main.js', 'favicon.svg']) await cp(path.join(root, 'site', file), path.join(out, file));
 await cp(path.join(root, 'site/cat'), path.join(out, 'cat'), { recursive: true });
-await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications));
+await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications).replace('href="style.css"', `href="style.css?v=${stylesheetVersion}"`));
 const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', 'assets/fonts/yulong-name-kai.woff', 'assets/fonts/OFL.txt', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
 for (const asset of assets) {
   await mkdir(path.dirname(path.join(out, asset)), { recursive: true });
