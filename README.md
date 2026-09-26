@@ -1,17 +1,18 @@
 # Yulong Liu — academic homepage
 
-Single-page academic homepage with a navy navigation bar, portrait and biography,
-news, education, illustrated publications, research support, and academic service.
-The layout follows https://chenliu-1996.github.io/. The biography, portrait, CV,
-publication metadata, and scientific figures come from Yulong's existing website.
-The HTML, CSS, and JavaScript are independently implemented.
+Single-page academic homepage with a navy navigation bar, portrait, research
+introduction, research directions, news, education, illustrated publications,
+research support, and academic service. Research focuses on differentiable
+programming, hybrid neural PDE solvers, and uncertainty-aware scientific AI for
+multiphysics geomechanical systems. The page uses a white background, restrained
+typography, and responsive layouts without text highlights.
 
 ## Edit and preview
 
 - `site/index.html`: biography, news, education, service, and links.
 - `site/publications.json`: publication metadata; selected and categorized lists share this source.
 - `site/style.css`: layout, colors, typography, and mobile styles.
-- `site/main.js`: mobile navigation and the research-figure viewer.
+- `site/main.js`: mobile navigation, research-figure viewer, and desktop pixel cat.
 - `site/cat/`: the reference site's pixel cat artwork; source credit is in `ATTRIBUTION.txt`.
 - `assets/img/`: portrait and scientific figures.
 - `assets/pdf/Yulong_CV2026_V2.pdf`: downloadable CV.
@@ -48,4 +49,8 @@ No custom domain or CNAME is needed. See [GitHub's Pages documentation](https://
 ## CV updates
 
 The CV source lives in https://github.com/Yulongggggg/Yulong_CV2026_V2.
-Replace `assets/pdf/Yulong_CV2026_V2.pdf` with the newly compiled PDF, then rebuild.
+The local checkout is `../Yulong_CV2026_V2`. Edit `cv_content.tex` for content and
+`main.tex` for typography. Compile with Tectonic or pdfLaTeX, then replace
+`assets/pdf/Yulong_CV2026_V2.pdf` and the legacy root `Yulong_CV2026_V2.pdf` with the
+new PDF before rebuilding. Push website changes to the `pages` remote's `main`
+branch; the `origin` remote is the earlier website repository.
