@@ -47,7 +47,7 @@ await mkdir(out, { recursive: true });
 for (const file of ['style.css', 'main.js', 'favicon.svg']) await cp(path.join(root, 'site', file), path.join(out, file));
 await cp(path.join(root, 'site/cat'), path.join(out, 'cat'), { recursive: true });
 await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications));
-const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
+const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', 'assets/img/yulong-liu-calligraphy.png', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
 for (const asset of assets) {
   await mkdir(path.dirname(path.join(out, asset)), { recursive: true });
   await cp(path.join(root, asset), path.join(out, asset));

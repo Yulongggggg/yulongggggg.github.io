@@ -10,6 +10,8 @@ homogenization, coupled multiphysics simulation, and subsurface energy systems
 such as geothermal reservoirs and hydraulic fracturing. The page uses a white background,
 responsive layouts, and real PDF first-page previews without text highlights.
 Preserve this template when updating content unless a redesign is explicitly requested.
+Research directions use seven compact SVG schematics and short captions rather than
+numbered paragraphs. The Chinese calligraphic name beside the main heading reads 刘雨龙.
 
 ## Edit and preview
 
