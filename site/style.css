@@ -1,3 +1,4 @@
+@font-face { font-family: "Yulong Name Kai"; src: url("assets/fonts/yulong-name-kai.woff") format("woff"); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+5218, U+96E8, U+9F99; }
 :root { color-scheme: light; --navy: #060e66; --link: #0000aa; --line: #dce3ea; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 78px; }
@@ -10,9 +11,9 @@ img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 20px; }
 h1, h2, h3, h4 { font-family: Arial, Helvetica, sans-serif; color: #000; line-height: 1.25; }
 h1 { margin: 0 0 20px; font-size: 34px; font-weight: 700; }
-.name-heading { display: flex; align-items: center; gap: 22px; }
+.name-heading { display: flex; align-items: baseline; gap: 18px; }
 .name-heading > span { white-space: nowrap; }
-.chinese-name { display: block; width: 132px; height: auto; flex: none; }
+.chinese-name { font-family: "Yulong Name Kai", "Kaiti SC", KaiTi, STKaiti, serif; font-size: .92em; font-weight: 400; line-height: 1.25; letter-spacing: .04em; color: #222; flex: none; }
 h2 { margin: 0 0 15px; font-size: 23px; font-weight: 700; }
 h3 { margin: 0 0 10px; font-size: 21px; }
 .container { width: 1170px; max-width: 100%; padding: 0 20px; margin: 0 auto; }
@@ -150,7 +151,6 @@ body:has(dialog[open]) { overflow: hidden; }
   .profile-contact { font-size: 20px; }
   h1 { font-size: 32px; }
   .name-heading { gap: clamp(10px, 3vw, 18px); font-size: clamp(28px, 7.5vw, 32px); }
-  .chinese-name { width: clamp(100px, 28vw, 126px); }
   h2 { font-size: 22px; }
   .bio-copy p { margin-bottom: 22px; }
   .home-section { padding-top: 36px; }
