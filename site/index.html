@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#142b49">
   <title>Yulong Liu's Homepage</title>
-  <meta name="description" content="Yulong Liu, Cornell University. Differentiable programming, hybrid neural PDE solvers, and uncertainty-aware scientific AI for multiphysics geomechanical systems.">
+  <meta name="description" content="Yulong Liu, Cornell University. Scientific AI and discovery, homogenization, multiphysics simulation, and subsurface energy systems, including geothermal energy and hydraulic fracturing.">
   <link rel="canonical" href="https://yulongggggg.github.io/">
   <meta property="og:title" content="Yulong Liu's Homepage">
-  <meta property="og:description" content="Differentiable programming, hybrid neural PDE solvers, and uncertainty-aware scientific AI for multiphysics geomechanics at Cornell University.">
+  <meta property="og:description" content="Scientific AI and discovery, computational geomechanics, and subsurface energy systems at Cornell University.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yulongggggg.github.io/">
   <meta property="og:image" content="https://yulongggggg.github.io/assets/img/yulong-liu-portrait.png">
@@ -39,11 +39,11 @@
         </div>
       </aside>
       <div class="biography">
-        <p class="eyebrow">Scientific AI · Multiphysics Geomechanics</p>
+        <p class="eyebrow">Scientific AI · Geomechanics · Subsurface Energy</p>
         <h1 id="about">Yulong Liu</h1>
         <div class="bio-copy">
-          <p class="research-lead">I study <strong>differentiable programming</strong>, <strong>hybrid neural PDE solvers</strong>, and <strong>uncertainty-aware scientific AI</strong> for multiphysics geomechanical systems.</p>
-          <p>My work brings learning into numerical simulation to understand how fluid flow, heat transport, and rock deformation interact. I am interested in models that are efficient to evaluate, can be calibrated from observations, and make uncertainty part of their predictions.</p>
+          <p class="research-lead">My research connects <strong>scientific AI</strong> with <strong>computational geomechanics</strong>, with applications in <strong>subsurface energy systems</strong>.</p>
+          <p>I work on differentiable programming, hybrid neural PDE solvers, uncertainty-aware scientific AI, and AI for scientific discovery. These methods complement my work in homogenization and coupled multiphysics simulation to study geothermal reservoirs, hydraulic fracturing, and the interactions between fluid flow, heat transport, and rock deformation.</p>
           <p>At Cornell, I work with <a href="https://arsonlab.engineering.cornell.edu/">Chloé Arson</a> as a Ph.D. candidate in Earth Science, with minors in Computer Science and Scientific Computing. My projects span <a href="#paper-operator">neural operators for geothermal reservoirs</a>, <a href="#paper-pinn">physics-informed modeling of heterogeneous rock</a>, and <a href="#paper-intent">verification of AI-generated simulation code</a>.</p>
           <p class="bio-background">Before Cornell, I earned my B.S. in Mining Engineering at Northeastern University in 2024, where I worked on deep learning for microseismic signal analysis.</p>
         </div>
@@ -52,11 +52,23 @@
     </section>
     <section class="home-section research-section" id="research" aria-labelledby="research-title">
       <h2 id="research-title">Research directions</h2>
-      <div class="research-grid">
-        <article><span class="research-number" aria-hidden="true">01</span><h3>Differentiable programming</h3><p>Connecting physical simulation with learning and inverse problems through differentiable models.</p></article>
-        <article><span class="research-number" aria-hidden="true">02</span><h3>Hybrid neural PDE solvers</h3><p>Combining numerical structure with neural representations to model coupled processes in rock and reservoirs.</p></article>
-        <article><span class="research-number" aria-hidden="true">03</span><h3>Uncertainty-aware scientific AI</h3><p>Studying how uncertainty propagates through multiphysics predictions and how to assess their reliability.</p></article>
-      </div>
+      <section class="research-group" aria-labelledby="ai-directions-title">
+        <h3 class="research-group-title" id="ai-directions-title">AI methods &amp; scientific discovery</h3>
+        <div class="research-grid research-grid-ai">
+          <article><span class="research-number" aria-hidden="true">01</span><h4>Differentiable programming</h4><p>Connecting physical simulation with learning and inverse problems through differentiable models.</p></article>
+          <article><span class="research-number" aria-hidden="true">02</span><h4>Hybrid neural PDE solvers</h4><p>Combining numerical structure with neural representations to model coupled processes in rock and reservoirs.</p></article>
+          <article><span class="research-number" aria-hidden="true">03</span><h4>Uncertainty-aware scientific AI</h4><p>Studying how uncertainty propagates through multiphysics predictions and how to assess their reliability.</p></article>
+          <article><span class="research-number" aria-hidden="true">04</span><h4>AI for Science &amp; scientific discovery</h4><p>Using learning to discover interpretable physical relationships and effective models, including permeability laws in heterogeneous porous media.</p></article>
+        </div>
+      </section>
+      <section class="research-group" aria-labelledby="engineering-directions-title">
+        <h3 class="research-group-title" id="engineering-directions-title">Engineering &amp; subsurface energy</h3>
+        <div class="research-grid research-grid-engineering">
+          <article><span class="research-number" aria-hidden="true">01</span><h4>Homogenization &amp; multiscale modeling</h4><p>Linking small-scale heterogeneity to effective properties and continuum models of porous media.</p></article>
+          <article><span class="research-number" aria-hidden="true">02</span><h4>Coupled multiphysics simulation</h4><p>Modeling interacting thermal, hydraulic, and mechanical processes, including finite element simulation in MOOSE.</p></article>
+          <article><span class="research-number" aria-hidden="true">03</span><h4>Subsurface energy systems</h4><p>Studying geothermal reservoirs, hydraulic fracturing, and injection–production processes in subsurface systems.</p></article>
+        </div>
+      </section>
     </section>
     <section id="news" class="home-section" aria-labelledby="news-title">
       <h2 id="news-title">News</h2>
@@ -71,7 +83,7 @@
     </section>
     <section class="home-section timeline-columns" id="education" aria-label="Research and education">
       <div><h2 class="small-heading">Research experience</h2><ol class="timeline">
-        <li><h3>Scientific AI for multiphysics geomechanics</h3><p>Cornell University · Advised by Chloé Arson.</p><p>Differentiable simulation, hybrid neural PDE solvers, and uncertainty-aware modeling.</p></li>
+        <li><h3>Scientific AI &amp; computational geomechanics</h3><p>Cornell University · Advised by Chloé Arson.</p><p>AI methods and scientific discovery; homogenization and coupled simulation for geothermal and hydraulic fracturing systems.</p></li>
         <li><h3>Microseismic signal analysis</h3><p>Undergraduate thesis · Northeastern University, 2024.</p><p>Deep learning for classification and arrival-time picking.</p></li>
       </ol></div>
       <div><h2 class="small-heading">Education</h2><ol class="timeline">
@@ -112,6 +124,6 @@
   <footer class="container footer"><p>© 2026 Yulong Liu · <a href="mailto:yl3825@cornell.edu">Email</a> · <a href="https://github.com/Yulongggggg">GitHub</a> · <a href="#top">Back to top ↑</a></p></footer>
   <div class="corner-cat" aria-hidden="true"><div class="cat-sprite"></div></div>
   <div class="cat-toy" aria-hidden="true" hidden></div>
-  <dialog class="figure-dialog" aria-label="Research figure"><button type="button" class="dialog-close" aria-label="Close research figure">Close ×</button><img alt=""></dialog>
+  <dialog class="figure-dialog" aria-label="Publication preview"><button type="button" class="dialog-close" aria-label="Close publication preview">Close ×</button><img alt=""></dialog>
 </body>
 </html>

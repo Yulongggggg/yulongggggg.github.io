@@ -16,15 +16,20 @@ for (const paper of papers) {
   if (!['journal', 'conference', 'preprint'].includes(paper.category)) throw new Error(`Invalid category: ${paper.id}`);
   if (!paper.image.startsWith('assets/img/') || paper.image.includes('..')) throw new Error(`Invalid image path: ${paper.id}`);
   await access(path.join(root, paper.image));
+  if (paper.pdfFile) {
+    if (!paper.pdfFile.startsWith('assets/pdf/') || !paper.pdfFile.endsWith('.pdf') || paper.pdfFile.includes('..')) throw new Error(`Invalid PDF path: ${paper.id}`);
+    await access(path.join(root, paper.pdfFile));
+  }
   for (const link of paper.links) if (new URL(link.url).protocol !== 'https:') throw new Error(`Invalid paper URL: ${link.url}`);
 }
 function renderPaper(p, featured) {
-  const ribbon = p.ribbon ? `<span class="ribbon ${color(p.ribbonColor)}"><span>${escape(p.ribbon)}</span></span>` : '';
+  const isPaperPage = p.imageType === 'paper-page';
+  const ribbon = p.ribbon && !isPaperPage ? `<span class="ribbon ${color(p.ribbonColor)}"><span>${escape(p.ribbon)}</span></span>` : '';
   const tags = featured ? `<div class="tags">${(p.tags || []).map((tag, i) => `<span${i ? ' class="green"' : ''}>${escape(tag)}</span>`).join('')}</div>` : '';
   const links = `<div class="paper-links">${p.links.map(link => `<a class="badge ${color(link.color)}" href="${escape(link.url)}">${escape(link.label)}</a>`).join('')}</div>`;
   const authors = escape(p.authors).replace('Yulong Liu', '<strong>Yulong Liu</strong>');
   return `<article class="paper ${featured ? 'featured' : 'compact'}" id="${featured ? 'paper' : 'list'}-${escape(p.id)}">
-    <a class="paper-image" href="${escape(p.image)}" data-figure aria-label="Enlarge figure: ${escape(p.title)}">${ribbon}<img src="${escape(p.image)}" alt="${escape(p.alt)}" loading="lazy" width="${featured ? 300 : 230}" height="${featured ? 240 : 150}"></a>
+    <a class="paper-image${isPaperPage ? ' paper-image--page' : ''}" href="${escape(p.image)}" data-figure aria-label="${isPaperPage ? 'View first page' : 'Enlarge figure'}: ${escape(p.title)}">${ribbon}<img src="${escape(p.image)}" alt="${escape(p.alt)}" loading="lazy" width="${p.imageWidth || (featured ? 300 : 230)}" height="${p.imageHeight || (featured ? 240 : 150)}"></a>
     <div class="paper-copy">${tags}<h3>${escape(p.title)}</h3>${featured ? links : ''}${featured && p.summary ? `<p class="paper-summary">${escape(p.summary)}</p>` : ''}<p class="authors">${authors}</p><p class="venue">${escape(p.venue)}</p>${featured ? '' : links}</div>
   </article>`;
 }
@@ -42,7 +47,7 @@ await mkdir(out, { recursive: true });
 for (const file of ['style.css', 'main.js', 'favicon.svg']) await cp(path.join(root, 'site', file), path.join(out, file));
 await cp(path.join(root, 'site/cat'), path.join(out, 'cat'), { recursive: true });
 await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications));
-const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', ...papers.map(p => p.image)]);
+const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
 for (const asset of assets) {
   await mkdir(path.dirname(path.join(out, asset)), { recursive: true });
   await cp(path.join(root, asset), path.join(out, asset));

@@ -2,9 +2,11 @@
 
 Single-page academic homepage with a navy navigation bar, portrait, research
 introduction, research directions, news, education, illustrated publications,
-research support, and academic service. Research focuses on differentiable
-programming, hybrid neural PDE solvers, and uncertainty-aware scientific AI for
-multiphysics geomechanical systems. The page uses a white background, restrained
+research support, and academic service. AI directions include differentiable
+programming, hybrid neural PDE solvers, uncertainty-aware scientific AI, and
+AI for Science and scientific discovery. Engineering directions include
+homogenization, coupled multiphysics simulation, and subsurface energy systems
+such as geothermal reservoirs and hydraulic fracturing. The page uses a white background, restrained
 typography, and responsive layouts without text highlights.
 
 ## Edit and preview
@@ -14,7 +16,9 @@ typography, and responsive layouts without text highlights.
 - `site/style.css`: layout, colors, typography, and mobile styles.
 - `site/main.js`: mobile navigation, research-figure viewer, and desktop pixel cat.
 - `site/cat/`: the reference site's pixel cat artwork; source credit is in `ATTRIBUTION.txt`.
-- `assets/img/`: portrait and scientific figures.
+- `assets/img/`: portrait, scientific figures, and paper previews.
+- `assets/img/paper-pages/`: actual PDF first-page screenshots. `imageSource` in publication metadata records their source; `imageWidth` and `imageHeight` preserve the page proportions.
+- `pdfFile` in publication metadata includes an uploaded paper PDF in the deployment. Public paper links point to the publisher, arXiv, or the hosted PDF.
 - `assets/pdf/Yulong_CV2026_V2.pdf`: downloadable CV.
 
 Requires Node.js 22 or later. No npm dependencies or Ruby installation required.
@@ -48,7 +52,7 @@ No custom domain or CNAME is needed. See [GitHub's Pages documentation](https://
 
 ## CV updates
 
-The CV source lives in https://github.com/Yulongggggg/Yulong_CV2026_V2.
+The CV source lives in https://github.com/Yulongggggg/Yulong_CV2026_V2. Keep its original template; update content without changing the typography or layout unless requested.
 The local checkout is `../Yulong_CV2026_V2`. Edit `cv_content.tex` for content and
 `main.tex` for typography. Compile with Tectonic or pdfLaTeX, then replace
 `assets/pdf/Yulong_CV2026_V2.pdf` and the legacy root `Yulong_CV2026_V2.pdf` with the

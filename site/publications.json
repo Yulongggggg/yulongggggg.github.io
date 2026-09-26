@@ -1,58 +1,167 @@
 [
   {
-    "id": "pinn", "category": "journal", "selected": true,
+    "id": "pinn",
+    "category": "journal",
+    "selected": true,
     "title": "A Physics-Informed Neural Network for Pressurized Cavities of Arbitrary Shape in Heterogeneous Rock",
     "authors": "Yulong Liu, Chloé Arson",
     "venue": "Rock Mechanics and Rock Engineering, 2026",
-    "image": "assets/img/research-results/fig11-1layer-30.png", "alt": "Displacement and stress predictions around a pressurized cavity",
-    "ribbon": "RMRE", "tags": ["Computational geomechanics", "Physics-informed learning"],
+    "image": "assets/img/paper-pages/pinn.png",
+    "alt": "First page of A Physics-Informed Neural Network for Pressurized Cavities of Arbitrary Shape in Heterogeneous Rock",
+    "ribbon": "RMRE",
+    "tags": [
+      "Computational geomechanics",
+      "Physics-informed learning"
+    ],
     "summary": "Physics-informed prediction of stress and displacement around arbitrarily shaped cavities in heterogeneous rock, connecting neural representations with the governing mechanics.",
-    "links": [{"label": "Paper", "url": "https://doi.org/10.1007/s00603-026-05882-5"}]
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1007/s00603-026-05882-5"
+      }
+    ],
+    "imageType": "paper-page",
+    "imageWidth": 1130,
+    "imageHeight": 1500,
+    "imageSource": "https://link.springer.com/content/pdf/10.1007/s00603-026-05882-5.pdf"
   },
   {
-    "id": "intent", "category": "preprint", "selected": true,
+    "id": "intent",
+    "category": "preprint",
+    "selected": true,
     "title": "Your Simulation Runs but Solves the Wrong Physics: PDE-Grounded Intent Verification for LLM-Generated Multiphysics Simulation Code",
-    "authors": "Yulong Liu (co-first and corresponding author), Zhenghan Song, et al.",
+    "authors": "Zhenghan Song, Yulong Liu (co-first and corresponding author), et al.",
     "venue": "arXiv preprint · Under review at NeurIPS 2026",
-    "image": "assets/img/research-results/temp-fig1-1.png", "alt": "PDE-grounded verification workflow for multiphysics simulation code",
-    "ribbon": "Preprint", "ribbonColor": "muted", "tags": ["Reliable AI", "LLMs for science"],
+    "image": "assets/img/paper-pages/intent.png",
+    "alt": "First page of Your Simulation Runs but Solves the Wrong Physics: PDE-Grounded Intent Verification for LLM-Generated Multiphysics Simulation Code",
+    "ribbon": "Preprint",
+    "ribbonColor": "muted",
+    "tags": [
+      "Reliable AI",
+      "LLMs for science"
+    ],
     "summary": "A simulation can execute successfully while solving the wrong physical problem. This work studies PDE-grounded checks of whether LLM-generated code matches the intended multiphysics problem.",
-    "links": [{"label": "arXiv", "url": "https://arxiv.org/abs/2605.09360", "color": "red"}, {"label": "PDF", "url": "https://arxiv.org/pdf/2605.09360"}]
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2605.09360",
+        "color": "red"
+      },
+      {
+        "label": "PDF",
+        "url": "https://arxiv.org/pdf/2605.09360"
+      }
+    ],
+    "imageType": "paper-page",
+    "imageWidth": 1160,
+    "imageHeight": 1500,
+    "imageSource": "https://arxiv.org/pdf/2605.09360"
   },
   {
-    "id": "operator", "category": "conference", "selected": true,
+    "id": "operator",
+    "category": "conference",
+    "selected": true,
     "title": "Operator Learning Surrogate Modeling of Hydraulically Fractured Geothermal Injection-Production Systems: A Cornell Case Study",
     "authors": "Yulong Liu, Jonah Botvinick-Greenhouse, Yunan Yang, Chloé Arson",
     "venue": "ARMA US Rock Mechanics/Geomechanics Symposium, Tucson, 2026",
-    "image": "assets/img/research-results/generalization-1.png", "alt": "Operator-learning generalization across fracture configurations",
-    "ribbon": "ARMA", "ribbonColor": "blue", "tags": ["Geothermal reservoirs", "Operator learning"],
+    "image": "assets/img/paper-pages/operator.png",
+    "alt": "First page of Operator Learning Surrogate Modeling of Hydraulically Fractured Geothermal Injection-Production Systems: A Cornell Case Study",
+    "ribbon": "ARMA",
+    "ribbonColor": "blue",
+    "tags": [
+      "Geothermal reservoirs",
+      "Operator learning"
+    ],
     "summary": "Surrogate models for rapid evaluation of fractured geothermal injection-production systems, trained on high-fidelity coupled simulations and evaluated across fracture configurations.",
-    "links": [{"label": "Google Scholar", "url": "https://scholar.google.com/scholar?q=Operator+Learning+Surrogate+Modeling+of+Hydraulically+Fractured+Geothermal+Injection-Production+Systems:+A+Cornell+Case+Study"}]
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.56952/ARMA-2026-0354"
+      },
+      {
+        "label": "PDF",
+        "url": "https://yulongggggg.github.io/assets/pdf/26026-ARMA-OL-EGS_664144761113113350.pdf"
+      }
+    ],
+    "imageType": "paper-page",
+    "imageWidth": 1160,
+    "imageHeight": 1500,
+    "imageSource": "https://github.com/Yulongggggg/yulongggggg.github.io/blob/a04c4ae/assets/pdf/26026-ARMA-OL-EGS_664144761113113350.pdf",
+    "pdfFile": "assets/pdf/26026-ARMA-OL-EGS_664144761113113350.pdf"
   },
   {
-    "id": "bilayer", "category": "conference",
+    "id": "bilayer",
+    "category": "conference",
     "title": "Physics-Informed Neural Network Surrogate Modeling of Pressurized Cavity in Homogeneous and Bilayered Media",
     "authors": "Yulong Liu (corresponding author), Chloé Arson",
     "venue": "ARMA US Rock Mechanics/Geomechanics Symposium, 2025 · D022S018R006",
-    "image": "assets/img/pub-covers/bilayer-arma.svg", "alt": "Pressurized cavity surrogate modeling paper",
-    "ribbon": "ARMA", "ribbonColor": "blue",
-    "links": [{"label": "Google Scholar", "url": "https://scholar.google.com/scholar?q=Physics-informed+neural+network+surrogate+modeling+of+pressurized+cavity+in+homogeneous+and+bilayered+media"}]
+    "image": "assets/img/paper-pages/bilayer.png",
+    "alt": "First page of Physics-Informed Neural Network Surrogate Modeling of Pressurized Cavity in Homogeneous and Bilayered Media",
+    "ribbon": "ARMA",
+    "ribbonColor": "blue",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.56952/ARMA-2025-0234"
+      },
+      {
+        "label": "PDF",
+        "url": "https://yulongggggg.github.io/assets/pdf/ARMA-25-pdf.pdf"
+      }
+    ],
+    "imageType": "paper-page",
+    "imageWidth": 1160,
+    "imageHeight": 1500,
+    "imageSource": "https://github.com/Yulongggggg/yulongggggg.github.io/blob/a04c4ae/assets/pdf/ARMA-25-pdf.pdf",
+    "pdfFile": "assets/pdf/ARMA-25-pdf.pdf"
   },
   {
-    "id": "microtunnelling", "category": "journal",
+    "id": "microtunnelling",
+    "category": "journal",
     "title": "Numerical Assessment of Plasticity Development and Energy Expenditure of Ant-Like Microtunnelling",
     "authors": "M. Belachew, Yulong Liu, J. D. Frost, Chloé Arson",
     "venue": "Tunnelling and Underground Space Technology, 172, 107501, 2026",
-    "image": "assets/img/research-results/gr11-lrg.jpg", "alt": "Stress evolution during ant-like microtunnelling",
+    "image": "assets/img/paper-pages/microtunnelling.png",
+    "alt": "First page of Numerical Assessment of Plasticity Development and Energy Expenditure of Ant-Like Microtunnelling",
     "ribbon": "TUST",
-    "links": [{"label": "Paper", "url": "https://doi.org/10.1016/j.tust.2026.107501"}]
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1016/j.tust.2026.107501"
+      },
+      {
+        "label": "PDF",
+        "url": "https://yulongggggg.github.io/assets/pdf/1-s2.0-S0886779826000593-main.pdf"
+      }
+    ],
+    "imageType": "paper-page",
+    "imageWidth": 1126,
+    "imageHeight": 1500,
+    "imageSource": "https://github.com/Yulongggggg/yulongggggg.github.io/blob/a04c4ae/assets/pdf/1-s2.0-S0886779826000593-main.pdf",
+    "pdfFile": "assets/pdf/1-s2.0-S0886779826000593-main.pdf"
   },
   {
-    "id": "belief", "category": "preprint",
+    "id": "belief",
+    "category": "preprint",
     "title": "Prefix-Safe Bayesian Belief Tracking for LLM Reasoning Reliability: Separating Calibration from Ranking",
     "authors": "Zhenghan Song, Yunyi Li, Yulong Liu (corresponding author)",
     "venue": "Under review at ACL ARR 2026",
-    "image": "assets/img/pub-covers/acl-arr-prefix-safe.svg", "alt": "Prefix-Safe Bayesian Belief Tracking manuscript",
-    "links": []
+    "image": "assets/img/paper-pages/belief.png",
+    "alt": "First page of Prefix-Safe Bayesian Belief Tracking for LLM Reasoning Reliability: Separating Calibration from Ranking",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2605.27712",
+        "color": "red"
+      },
+      {
+        "label": "PDF",
+        "url": "https://arxiv.org/pdf/2605.27712"
+      }
+    ],
+    "imageType": "paper-page",
+    "imageWidth": 1061,
+    "imageHeight": 1500,
+    "imageSource": "https://arxiv.org/pdf/2605.27712"
   }
 ]
