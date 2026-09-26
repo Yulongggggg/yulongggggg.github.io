@@ -10,10 +10,8 @@ homogenization, coupled multiphysics simulation, and subsurface energy systems
 such as geothermal reservoirs and hydraulic fracturing. The page uses a white background,
 responsive layouts, and real PDF first-page previews without text highlights.
 Preserve this template when updating content unless a redesign is explicitly requested.
-Research directions use seven compact SVG schematics and short captions rather than
-numbered paragraphs. The Chinese name beside the main heading is real text, 刘雨龙,
-set in a self-hosted Kai-style font subset derived from LXGW WenKai. Font provenance
-and the OFL license are in `assets/fonts/`. Keep the name as text rather than artwork.
+Research directions are two compact text lists, without diagrams, numbered items,
+extra descriptions, or decorative cards. The main heading uses only “Yulong Liu”.
 
 ## Edit and preview
 
