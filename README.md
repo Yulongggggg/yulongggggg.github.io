@@ -1,13 +1,15 @@
 # Yulong Liu — academic homepage
 
-Single-page academic homepage with a navy navigation bar, portrait, research
+Single-page academic homepage retaining the September 17 template: blue navigation,
+Verdana body text, Arial headings, and a large portrait beside the research
 introduction, research directions, news, education, illustrated publications,
 research support, and academic service. AI directions include differentiable
 programming, hybrid neural PDE solvers, uncertainty-aware scientific AI, and
 AI for Science and scientific discovery. Engineering directions include
 homogenization, coupled multiphysics simulation, and subsurface energy systems
-such as geothermal reservoirs and hydraulic fracturing. The page uses a white background, restrained
-typography, and responsive layouts without text highlights.
+such as geothermal reservoirs and hydraulic fracturing. The page uses a white background,
+responsive layouts, and real PDF first-page previews without text highlights.
+Preserve this template when updating content unless a redesign is explicitly requested.
 
 ## Edit and preview
 
