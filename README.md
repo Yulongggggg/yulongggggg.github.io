@@ -16,7 +16,7 @@ extra descriptions, or decorative cards. The main heading uses only “Yulong Li
 ## Edit and preview
 
 - `site/index.html`: biography, news, education, service, and links.
-- Pinned news: the `news-pinned` block at the top of News is a swipeable card (arrows, dots, keyboard; slow auto-advance that pauses on hover/focus and under reduced motion). Add or remove `pinned-slide` paragraphs; `site/main.js` builds the dots.
+- Pinned news: the `news-pinned` block at the top of News holds the most important items (session chair, grants) as a swipeable card (arrows, dots, keyboard; slow auto-advance that pauses on hover/focus and under reduced motion). Add or remove `pinned-slide` paragraphs; `site/main.js` builds the dots.
 - `site/publications.json`: publication metadata; selected and categorized lists share this source.
 - `site/style.css`: layout, colors, typography, and mobile styles.
 - `site/main.js`: mobile navigation, research-figure viewer, and desktop pixel cat.
