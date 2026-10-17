@@ -49,7 +49,7 @@ if (!template.includes('<!-- PUBLICATIONS -->')) throw new Error('Missing public
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const file of ['style.css', 'main.js', 'favicon.svg']) await cp(path.join(root, 'site', file), path.join(out, file));
-await cp(path.join(root, 'site/cat'), path.join(out, 'cat'), { recursive: true });
+await cp(path.join(root, 'site/dog'), path.join(out, 'dog'), { recursive: true });
 await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications).replace('href="style.css"', `href="style.css?v=${stylesheetVersion}"`).replace('src="main.js"', `src="main.js?v=${scriptVersion}"`).replaceAll('href="assets/pdf/Yulong_CV2026_V2.pdf"', `href="assets/pdf/Yulong_CV2026_V2.pdf?v=${cvVersion}"`));
 const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
 for (const asset of assets) {

@@ -59,7 +59,7 @@ document.addEventListener('click', event => {
   const x = Math.max(-65, Math.min(innerWidth - 175, event.clientX - 120));
   const y = Math.max(-55, Math.min(innerHeight - 155, event.clientY - 130));
   const startX = catX, startY = catY;
-  const facing = x < startX ? -1 : 1;
+  const facing = x < startX ? 1 : -1;  // sprites face left; mirror only when running right
   const duration = Math.max(250, Math.hypot(x - startX, y - startY) / .55);
   const start = performance.now();
   toy.style.left = `${event.clientX - 14}px`;
