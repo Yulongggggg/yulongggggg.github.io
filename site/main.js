@@ -74,3 +74,38 @@ document.addEventListener('click', event => {
   }
   catFrame = requestAnimationFrame(move);
 });
+
+// Pinned news card: swipe, arrows or dots move between items; it advances slowly unless hovered, focused or reduced motion is set.
+const pinned = document.querySelector('.news-pinned');
+if (pinned) {
+  const track = pinned.querySelector('.pinned-track');
+  const slides = [...track.querySelectorAll('.pinned-slide')];
+  let index = 0, paused = false;
+  const show = i => {
+    index = (i + slides.length) % slides.length;
+    track.scrollTo({ left: index * track.clientWidth, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+  };
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Show item ${i + 1} of ${slides.length}`);
+    dot.addEventListener('click', () => show(i));
+    pinned.querySelector('.pinned-dots').append(dot);
+    return dot;
+  });
+  const mark = () => dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === index)));
+  track.addEventListener('scroll', () => { index = Math.round(track.scrollLeft / Math.max(1, track.clientWidth)); mark(); }, { passive: true });
+  pinned.querySelector('.pinned-prev').addEventListener('click', () => show(index - 1));
+  pinned.querySelector('.pinned-next').addEventListener('click', () => show(index + 1));
+  track.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); show(index - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(index + 1); }
+  });
+  pinned.addEventListener('pointerenter', () => { paused = true; });
+  pinned.addEventListener('pointerleave', () => { paused = false; });
+  pinned.addEventListener('focusin', () => { paused = true; });
+  pinned.addEventListener('focusout', () => { paused = false; });
+  window.addEventListener('resize', () => track.scrollTo({ left: index * track.clientWidth }));
+  setInterval(() => { if (!paused && !reducedMotion.matches && !document.hidden) show(index + 1); }, 7000);
+  mark();
+}
