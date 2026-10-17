@@ -55,17 +55,16 @@ HEAD[13] = "kCCCCCCCCCCkCCkCCCCCCCCCCk"
 
 BODY = mirror([
     "...krrrrrrrrr",   # collar
-    "...kOOOCCCCCy",   # tag
-    "..kOOOCCCCCCC",
-    "..kOOOCCCCCCC",
-    ".kOOOOCCCCCCC",
-    ".kOOOOOkCCCCC",   # front legs start
-    "kOOOOOkCCCCCc",
-    "kOOOOOkCCCCCc",
-    "kOOOOkCCCCCCc",
-    "kCCCCkCCcCCCc",   # hind feet and front paws, toe lines
-    "kCcCCkCCcCCCk",
-    ".kkkk.kkkkkk.",
+    "...kOOOOCCCCy",   # cream bib narrowing to a V, tag
+    "..kOOOOOOCCCC",
+    "..kOOOOOOOCCC",
+    ".kOOOOOOOOOCC",
+    ".kOOOOOkOOOkC",   # two slim front legs start
+    "kOOOOOOkOOOko",   # shadow between the legs
+    "kOOOOOOkOOOko",
+    "kOOOOOkCCCCko",   # white socks
+    "kCCCCCkCcCCko",   # hind foot, toe line
+    ".kkkkk.kkkkkk",
 ])
 
 def tail_overlay(shift=0):
