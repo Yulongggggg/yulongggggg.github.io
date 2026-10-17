@@ -4,7 +4,7 @@ Single-page academic homepage retaining the September 17 template: blue navigati
 Verdana body text, Arial headings, and a large portrait beside the research
 introduction, research directions, news, education, illustrated publications,
 research support, and academic service. AI directions include differentiable
-programming, hybrid neural PDE solvers, uncertainty-aware scientific AI, agentic AI, and
+programming, hybrid neural PDE solvers, uncertainty-aware scientific intelligence (SI), agentic AI, and
 AI for Science and scientific discovery. Engineering directions include
 homogenization, coupled multiphysics simulation, and subsurface energy systems
 such as geothermal reservoirs and hydraulic fracturing. The page uses a white background,
