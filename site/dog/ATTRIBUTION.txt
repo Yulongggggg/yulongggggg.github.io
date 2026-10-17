@@ -1,4 +1,4 @@
-Pixel Shiba Inu (IDLE.png, RUN.png) and tennis ball (TOY.png): original artwork drawn for this site
-by scripts/draw_dog.py (pure geometry, no third-party images). Regenerate with:
-  python scripts/draw_dog.py site/dog
-The sheets keep the earlier companion's layout: 8 frames of 80x64 px, facing left, shown at 3x.
+Chibi pixel Shiba Inu (IDLE.png, RUN.png) and tennis ball (TOY.png): original artwork for this site,
+hand-placed pixel by pixel in scripts/draw_shiba.py (no third-party images). Regenerate with:
+  python scripts/draw_shiba.py site/dog
+Layout matches the companion code: 8 frames of 80x64 px per sheet, shown at 3x; RUN is a hop cycle.
