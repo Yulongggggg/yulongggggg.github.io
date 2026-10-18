@@ -20,7 +20,7 @@ extra descriptions, or decorative cards. The main heading uses only “Yulong Li
 - `site/publications.json`: publication metadata; selected and categorized lists share this source.
 - `site/style.css`: layout, colors, typography, and mobile styles.
 - `site/main.js`: mobile navigation, research-figure viewer, and desktop pixel dog (CSS classes keep the older corner-cat names).
-- `site/dog/`: original chibi pixel Shiba Inu and tennis-ball sprites, hand-placed in `scripts/draw_shiba.py`; see `ATTRIBUTION.txt`.
+- `site/dog/`: Shiba Inu sprites by kyafu (free licence; re-laid out by `scripts/build_dog_sprites.py`) and an original tennis ball; see `ATTRIBUTION.txt`.
 - `assets/img/`: portrait, scientific figures, and paper previews.
 - `assets/img/paper-pages/`: actual PDF first-page screenshots. `imageSource` in publication metadata records their source; `imageWidth` and `imageHeight` preserve the page proportions.
 - `pdfFile` in publication metadata includes an uploaded paper PDF in the deployment. Public paper links point to the publisher, arXiv, or the hosted PDF.

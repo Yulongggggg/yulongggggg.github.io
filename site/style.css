@@ -147,12 +147,12 @@ body:has(dialog[open]) { overflow: hidden; }
   .paper p { font-size: 14px; }
   .news-list, .plain-list { padding-left: 0; }
 }
-.corner-cat { position: fixed; left: 0; top: 0; width: 240px; height: 192px; pointer-events: none; z-index: 15; visibility: hidden; }
+.corner-cat { position: fixed; left: 0; top: 0; width: 160px; height: 128px; pointer-events: none; z-index: 15; visibility: hidden; }
 .corner-cat.ready { visibility: visible; }
-.cat-sprite { width: 100%; height: 100%; background: url('dog/IDLE.png') 0 0 / 1920px 192px no-repeat; image-rendering: pixelated; animation: cat-frames 2.8s steps(8) infinite; }
-.corner-cat.running .cat-sprite { background-image: url('dog/RUN.png'); animation-duration: .45s; }
+.cat-sprite { width: 100%; height: 100%; background: url('dog/IDLE.png') 0 0 / 1280px 128px no-repeat; image-rendering: pixelated; animation: cat-frames 2.8s steps(8) infinite; }
+.corner-cat.running .cat-sprite { background-image: url('dog/RUN.png'); animation-duration: .7s; }
 .cat-toy { position: fixed; width: 28px; height: 28px; pointer-events: none; z-index: 14; background: url('dog/TOY.png') center / contain no-repeat; image-rendering: pixelated; }
-@keyframes cat-frames { to { background-position-x: -1920px; } }
+@keyframes cat-frames { to { background-position-x: -1280px; } }
 @media (max-width: 749px) { .corner-cat, .cat-toy { display: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .corner-cat, .cat-toy { display: none; } }
 @media print { .navbar, .skip-link, .figure-dialog, .corner-cat, .cat-toy { display: none; } .bio { padding-top: 0; } .paper { break-inside: avoid; } a { color: #000; } }

@@ -1,5 +1,7 @@
-Chibi pixel Shiba Inu (IDLE.png, RUN.png) and tennis ball (TOY.png): original artwork for this site,
-hand-placed pixel by pixel in scripts/draw_shiba.py (no third-party images). Regenerate with:
-  python scripts/draw_shiba.py site/dog
-Layout matches the companion code: 8 frames of 80x64 px per sheet, shown at 3x, facing left.
-IDLE: sitting, glancing around, blinking and wagging. RUN: side-view gallop.
+Shiba Inu sprites (IDLE.png, RUN.png): by kyafu, "Shiba Inu" character chip,
+https://kyafupaca.itch.io/shiba-inu (free; commercial use, modification and redistribution of
+modified data allowed; credit "kyafu" appreciated). Frames were re-cut and re-laid out for this site
+with scripts/build_dog_sprites.py (idle = standing side view with a panting rise; run = walk cycle).
+The unmodified source file is not stored in this repository.
+
+Tennis ball (TOY.png): original pixel art drawn for this site.

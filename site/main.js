@@ -47,7 +47,7 @@ function resetCat() {
   cancelAnimationFrame(catFrame);
   cat.classList.remove('running');
   toy.hidden = true;
-  placeCat(Math.max(0, innerWidth - 260), Math.max(0, innerHeight - 210));
+  placeCat(Math.max(0, innerWidth - 190), Math.max(0, innerHeight - 140));
   cat.classList.toggle('ready', !reducedMotion.matches);
 }
 resetCat();
@@ -56,8 +56,9 @@ reducedMotion.addEventListener('change', resetCat);
 document.addEventListener('click', event => {
   if (reducedMotion.matches || event.target.closest('a, button, dialog, .navbar') || getSelection()?.toString()) return;
   cancelAnimationFrame(catFrame);
-  const x = Math.max(-65, Math.min(innerWidth - 175, event.clientX - 120));
-  const y = Math.max(-55, Math.min(innerHeight - 155, event.clientY - 130));
+  // the dog's feet land on the click; the 160x128 box has empty margins around the sprite
+  const x = Math.max(-16, Math.min(innerWidth - 150, event.clientX - 80));
+  const y = Math.max(-30, Math.min(innerHeight - 128, event.clientY - 120));
   const startX = catX, startY = catY;
   const facing = x < startX ? 1 : -1;  // sprites face left; mirror only when running right
   const duration = Math.max(250, Math.hypot(x - startX, y - startY) / .55);
