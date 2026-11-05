@@ -11,7 +11,9 @@ such as geothermal reservoirs and hydraulic fracturing. The page uses a white ba
 responsive layouts, and real PDF first-page previews without text highlights.
 Preserve this template when updating content unless a redesign is explicitly requested.
 Research directions are two compact text lists, without diagrams, numbered items,
-extra descriptions, or decorative cards. The main heading uses only “Yulong Liu”.
+extra descriptions, or decorative cards. A separate Research highlights grid below
+them shows four figures from published or public papers, each linked to its paper.
+The main heading uses only “Yulong Liu”.
 
 ## Edit and preview
 
@@ -22,6 +24,7 @@ extra descriptions, or decorative cards. The main heading uses only “Yulong Li
 - `site/main.js`: mobile navigation, research-figure viewer, and desktop pixel dog (CSS classes keep the older corner-cat names).
 - `site/dog/`: Shiba Inu sprites by kyafu (free licence; re-laid out by `scripts/build_dog_sprites.py`) and an original tennis ball; see `ATTRIBUTION.txt`.
 - `assets/img/`: portrait, scientific figures, and paper previews.
+- `assets/img/research/`: WebP copies of the Research highlights figures. The grid shows `*-thumb.webp` (1100 px wide; the geothermal thumbnail shows the first three of six cases) and the figure viewer opens the full image. Full-resolution originals stay in `assets/img/research-results/`; the build copies this folder to `dist/`.
 - `assets/img/paper-pages/`: actual PDF first-page screenshots. `imageSource` in publication metadata records their source; `imageWidth` and `imageHeight` preserve the page proportions.
 - `pdfFile` in publication metadata includes an uploaded paper PDF in the deployment. Public paper links point to the publisher, arXiv, or the hosted PDF.
 - `assets/pdf/Yulong_CV2026_V2.pdf`: downloadable CV.
@@ -59,7 +62,7 @@ No custom domain or CNAME is needed. See [GitHub's Pages documentation](https://
 
 The CV source lives in https://github.com/Yulongggggg/Yulong_CV2026_V2. Keep its original template; update content without changing the typography or layout unless requested.
 The local checkout is `../Yulong_CV2026_V2`. Edit `cv_content.tex` for content and
-`main.tex` for typography. Compile with Tectonic or pdfLaTeX, then replace
+`main.tex` for typography. Compile with Tectonic, XeLaTeX or pdfLaTeX, then replace
 `assets/pdf/Yulong_CV2026_V2.pdf` and the legacy root `Yulong_CV2026_V2.pdf` with the
 new PDF before rebuilding. Push website changes to the `pages` remote's `main`
 branch; the `origin` remote is the earlier website repository.
