@@ -1,6 +1,7 @@
 # build output
 _site/
 dist/
+dist-academicpages/
 yulong_website/
 tmp/
 output/

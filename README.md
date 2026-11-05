@@ -44,6 +44,37 @@ them when decisions are confirmed. The prior Jekyll Markdown pages remain as
 source material; the new build does not use them. Common old page paths redirect
 to the relevant section of the homepage.
 
+## Alternative style: AcademicPages-like layout
+
+`themes/academicpages/` holds a second, multi-page design modeled on the
+AcademicPages Jekyll template (MIT License): a top navigation bar, a sticky profile
+sidebar with avatar and links, and separate Research, Publications, CV, Talks,
+Awards & Service and News pages, with a light-blue focus box, keyword chips, a grey
+news bubble and a research-figure carousel on the home page. It is not deployed.
+
+```sh
+npm run build:academicpages
+npm run preview:academicpages
+```
+
+Open `http://127.0.0.1:8791/`. The build writes `dist-academicpages/` with
+`scripts/build-academicpages.mjs`.
+
+- Shared with the main site: `site/publications.json` (Publications and Research
+  pages), `assets/img/` figures and paper previews, the portrait and the CV PDF.
+- Theme-only text, a snapshot from November 2026: `pages/home.html` (biography and
+  interests), `pages/news-items.html` (one `<li>` per line; the home page shows the
+  first six), `pages/talks.html`, `pages/awards.html`, `pages/cv.html`. Research
+  groupings, figures and the three summaries missing from `publications.json` are
+  set in the build script.
+- `layout.html` is the shared shell (navigation, sidebar, footer); `style.css` and
+  `main.js` hold the styles, mobile menu, carousel and figure viewer.
+
+To switch the live site to this style, bring the theme pages up to date with
+`site/index.html`, then in `.github/workflows/deploy.yml` change the build step to
+`npm run build:academicpages` and the uploaded `path` to `./dist-academicpages`.
+Old one-page anchors such as `/#publications` then land on the home page.
+
 ## GitHub Pages root address
 
 The intended public address is **https://yulongggggg.github.io/**. This requires
