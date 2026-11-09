@@ -14,8 +14,8 @@ description: Research, publications, support, presentations, and academic servic
     <p class="section-copy">Includes the 2026 RMRE journal article, NSF ACCESS and Empire AI allocations, and NASA FINESST proposal status.</p>
   </div>
   <div class="link-row">
-    <a class="cta-button cta-button--primary" href="{{ '/assets/pdf/Yulong_CV2026_V2.pdf' | relative_url }}?v={{ site.time | date: '%s' }}" target="_blank" rel="noreferrer">Open CV PDF ↗</a>
+    <a class="cta-button cta-button--primary" href="{{ '/assets/pdf/Yulong_Liu_CV.pdf' | relative_url }}?v={{ site.time | date: '%s' }}" target="_blank" rel="noreferrer">Open CV PDF ↗</a>
   </div>
 </section>
 
-<iframe class="cv-frame" src="{{ '/assets/pdf/Yulong_CV2026_V2.pdf' | relative_url }}?v={{ site.time | date: '%s' }}" title="Yulong Liu CV"></iframe>
+<iframe class="cv-frame" src="{{ '/assets/pdf/Yulong_Liu_CV.pdf' | relative_url }}?v={{ site.time | date: '%s' }}" title="Yulong Liu CV"></iframe>

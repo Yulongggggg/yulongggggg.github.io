@@ -30,7 +30,7 @@ const areas = [
   { id: 'reliable-ai', title: 'Reliable AI for Scientific Computing', projects: [['intent', 'pde-refine'], ['belief', null]] },
   { id: 'geomechanics', title: 'Computational Geomechanics', projects: [['microtunnelling', 'microtunnelling']] },
 ];
-const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf']);
+const assets = new Set(['assets/pdf/Yulong_Liu_CV.pdf']);
 function projectHtml(id, figure) {
   const p = byId[id];
   if (!p) throw new Error(`Unknown paper id in research page: ${id}`);
@@ -77,7 +77,7 @@ const layout = await read('layout.html');
 const versionOf = async file => createHash('sha256').update(await readFile(path.join(theme, file))).digest('hex').slice(0, 12);
 const cssVersion = await versionOf('style.css');
 const jsVersion = await versionOf('main.js');
-const cvVersion = createHash('sha256').update(await readFile(path.join(root, 'assets/pdf/Yulong_CV2026_V2.pdf'))).digest('hex').slice(0, 12);
+const cvVersion = createHash('sha256').update(await readFile(path.join(root, 'assets/pdf/Yulong_Liu_CV.pdf'))).digest('hex').slice(0, 12);
 const description = 'Yulong Liu, Ph.D. candidate at Cornell University: scientific AI, computational geomechanics, and subsurface energy systems.';
 
 await rm(out, { recursive: true, force: true });
@@ -95,7 +95,7 @@ for (const page of pages) {
     .replace('{{CONTENT}}', content)
     .replace('href="/style.css"', `href="/style.css?v=${cssVersion}"`)
     .replace('src="/main.js"', `src="/main.js?v=${jsVersion}"`)
-    .replaceAll('/assets/pdf/Yulong_CV2026_V2.pdf', `/assets/pdf/Yulong_CV2026_V2.pdf?v=${cvVersion}`);
+    .replaceAll('/assets/pdf/Yulong_Liu_CV.pdf', `/assets/pdf/Yulong_Liu_CV.pdf?v=${cvVersion}`);
   for (const [, asset] of html.matchAll(/(?:src|href)="\/(assets\/[^"?#]+)/g)) assets.add(asset);
   const dir = path.join(out, page.route);
   await mkdir(dir, { recursive: true });
@@ -117,6 +117,8 @@ for (const p of papers.filter(p => p.pdfFile)) {
   await mkdir(path.dirname(path.join(out, p.pdfFile)), { recursive: true });
   await cp(path.join(root, p.pdfFile), path.join(out, p.pdfFile));
 }
+// The CV used to be published as Yulong_CV2026_V2.pdf; keep that URL working for links already shared.
+await cp(path.join(root, 'assets/pdf/Yulong_Liu_CV.pdf'), path.join(out, 'assets/pdf/Yulong_CV2026_V2.pdf'));
 await writeFile(path.join(out, '.nojekyll'), '');
 await writeFile(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map(p => `<url><loc>${origin}${p.route}</loc></url>`).join('')}</urlset>\n`);

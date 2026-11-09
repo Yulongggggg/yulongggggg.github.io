@@ -42,7 +42,7 @@ const groups = [
 ];
 const publications = groups.map(([id, title, rows, featured]) => `<section class="home-section" id="${id}" aria-labelledby="${id}-title"><h2 class="publication-heading" id="${id}-title">${escape(title)}</h2>${rows.map(p => renderPaper(p, featured)).join('\n')}</section>`).join('\n');
 const template = await readFile(path.join(root, 'site/index.html'), 'utf8');
-const cvVersion = createHash('sha256').update(await readFile(path.join(root, 'assets/pdf/Yulong_CV2026_V2.pdf'))).digest('hex').slice(0, 12);
+const cvVersion = createHash('sha256').update(await readFile(path.join(root, 'assets/pdf/Yulong_Liu_CV.pdf'))).digest('hex').slice(0, 12);
 const scriptVersion = createHash('sha256').update(await readFile(path.join(root, 'site/main.js'))).digest('hex').slice(0, 12);
 const stylesheetVersion = createHash('sha256').update(await readFile(path.join(root, 'site/style.css'))).digest('hex').slice(0, 12);
 if (!template.includes('<!-- PUBLICATIONS -->')) throw new Error('Missing publications marker.');
@@ -51,18 +51,20 @@ await mkdir(out, { recursive: true });
 for (const file of ['style.css', 'main.js', 'favicon.svg']) await cp(path.join(root, 'site', file), path.join(out, file));
 await cp(path.join(root, 'site/dog'), path.join(out, 'dog'), { recursive: true });
 await cp(path.join(root, 'assets/img/research'), path.join(out, 'assets/img/research'), { recursive: true });
-await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications).replace('href="style.css"', `href="style.css?v=${stylesheetVersion}"`).replace('src="main.js"', `src="main.js?v=${scriptVersion}"`).replaceAll('href="assets/pdf/Yulong_CV2026_V2.pdf"', `href="assets/pdf/Yulong_CV2026_V2.pdf?v=${cvVersion}"`));
-const assets = new Set(['assets/pdf/Yulong_CV2026_V2.pdf', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
+await writeFile(path.join(out, 'index.html'), template.replace('<!-- PUBLICATIONS -->', publications).replace('href="style.css"', `href="style.css?v=${stylesheetVersion}"`).replace('src="main.js"', `src="main.js?v=${scriptVersion}"`).replaceAll('href="assets/pdf/Yulong_Liu_CV.pdf"', `href="assets/pdf/Yulong_Liu_CV.pdf?v=${cvVersion}"`));
+const assets = new Set(['assets/pdf/Yulong_Liu_CV.pdf', ...papers.map(p => p.image), ...papers.map(p => p.pdfFile).filter(Boolean)]);
 for (const asset of assets) {
   await mkdir(path.dirname(path.join(out, asset)), { recursive: true });
   await cp(path.join(root, asset), path.join(out, asset));
 }
+// The CV used to be published as Yulong_CV2026_V2.pdf; keep that URL working for links already shared.
+await cp(path.join(root, 'assets/pdf/Yulong_Liu_CV.pdf'), path.join(out, 'assets/pdf/Yulong_CV2026_V2.pdf'));
 // This existing portrait is a PNG with a historical .jpeg filename.
 await cp(path.join(root, 'assets/img/yulong-liu-portrait.jpeg'), path.join(out, 'assets/img/yulong-liu-portrait.png'));
 await writeFile(path.join(out, '.nojekyll'), '');
 await writeFile(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${origin}/</loc></url></urlset>\n`);
-for (const [route, target] of Object.entries({ research: '#about', publications: '#publications', education: '#education', awards: '#others', talks: '#talks', contact: '#contact', cv: 'assets/pdf/Yulong_CV2026_V2.pdf' })) {
+for (const [route, target] of Object.entries({ research: '#about', publications: '#publications', education: '#education', awards: '#others', talks: '#talks', contact: '#contact', cv: 'assets/pdf/Yulong_Liu_CV.pdf' })) {
   await mkdir(path.join(out, route), { recursive: true });
   const href = `../${target}`;
   await writeFile(path.join(out, route, 'index.html'), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=${href}"><title>Yulong Liu</title><p><a href="${href}">Continue to Yulong Liu’s homepage</a></p></html>\n`);

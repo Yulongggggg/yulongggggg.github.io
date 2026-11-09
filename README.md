@@ -27,7 +27,7 @@ The main heading uses only “Yulong Liu”.
 - `assets/img/research/`: WebP copies of the Research highlights figures. The grid shows `*-thumb.webp` (1100 px wide; the geothermal thumbnail shows the first three of six cases) and the figure viewer opens the full image. Full-resolution originals stay in `assets/img/research-results/`; the build copies this folder to `dist/`.
 - `assets/img/paper-pages/`: actual PDF first-page screenshots. `imageSource` in publication metadata records their source; `imageWidth` and `imageHeight` preserve the page proportions.
 - `pdfFile` in publication metadata includes an uploaded paper PDF in the deployment. Public paper links point to the publisher, arXiv, or the hosted PDF.
-- `assets/pdf/Yulong_CV2026_V2.pdf`: downloadable CV.
+- `assets/pdf/Yulong_Liu_CV.pdf`: downloadable CV. The build also publishes it at the old `assets/pdf/Yulong_CV2026_V2.pdf` path so earlier links keep working.
 
 Requires Node.js 22 or later. No npm dependencies or Ruby installation required.
 
@@ -94,6 +94,6 @@ No custom domain or CNAME is needed. See [GitHub's Pages documentation](https://
 The CV source lives in https://github.com/Yulongggggg/Yulong_CV2026_V2. Keep its original template; update content without changing the typography or layout unless requested.
 The local checkout is `../Yulong_CV2026_V2`. Edit `cv_content.tex` for content and
 `main.tex` for typography. Compile with Tectonic, XeLaTeX or pdfLaTeX, then replace
-`assets/pdf/Yulong_CV2026_V2.pdf` and the legacy root `Yulong_CV2026_V2.pdf` with the
+`assets/pdf/Yulong_Liu_CV.pdf` and the legacy root `Yulong_Liu_CV.pdf` with the
 new PDF before rebuilding. Push website changes to the `pages` remote's `main`
 branch; the `origin` remote is the earlier website repository.
