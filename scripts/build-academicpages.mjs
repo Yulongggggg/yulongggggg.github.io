@@ -1,5 +1,5 @@
 // Alternative AcademicPages-style site (top navigation, profile sidebar, multiple pages).
-// Builds into dist-academicpages/. Publications come from site/publications.json;
+// Builds into the folder given as the first argument (default dist-academicpages/); `npm run build` passes dist/. Publications come from site/publications.json;
 // the other page text lives in themes/academicpages/pages/.
 import { cp, mkdir, readFile, writeFile, rm, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const theme = path.join(root, 'themes/academicpages');
-const out = path.join(root, 'dist-academicpages');
+const out = path.resolve(root, process.argv[2] || 'dist-academicpages');
 const origin = 'https://yulongggggg.github.io';
 const read = file => readFile(path.join(theme, file), 'utf8');
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -122,5 +122,10 @@ await cp(path.join(root, 'assets/pdf/Yulong_Liu_CV.pdf'), path.join(out, 'assets
 await writeFile(path.join(out, '.nojekyll'), '');
 await writeFile(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 await writeFile(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map(p => `<url><loc>${origin}${p.route}</loc></url>`).join('')}</urlset>\n`);
+// Paths from the earlier single-page site that have no page of their own here.
+for (const [route, target] of Object.entries({ contact: '/', education: '/cv/' })) {
+  await mkdir(path.join(out, route), { recursive: true });
+  await writeFile(path.join(out, route, 'index.html'), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="${origin}${target}"><title>Yulong Liu</title><p><a href="${target}">Continue to Yulong Liu’s homepage</a></p></html>\n`);
+}
 await writeFile(path.join(out, '404.html'), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found · Yulong Liu</title><body style="font:18px/1.6 -apple-system,'Segoe UI',Roboto,Arial,sans-serif;max-width:650px;margin:15vh auto;padding:24px"><h1>Page not found</h1><p>This page may have moved.</p><a href="${origin}/">Return to Yulong Liu’s homepage →</a></body></html>\n`);
 console.log(`Built ${pages.length} AcademicPages-style pages and ${assets.size} assets into ${out}`);

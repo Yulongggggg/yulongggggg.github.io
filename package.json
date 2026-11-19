@@ -3,10 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-site.mjs",
+    "build": "node scripts/build-academicpages.mjs dist",
     "preview": "python3 -m http.server 8790 --bind 127.0.0.1 --directory dist",
-    "fetch:analytics": "node scripts/fetch-goatcounter-stats.mjs",
-    "build:academicpages": "node scripts/build-academicpages.mjs",
-    "preview:academicpages": "python3 -m http.server 8791 --bind 127.0.0.1 --directory dist-academicpages"
+    "build:classic": "node scripts/build-site.mjs",
+    "fetch:analytics": "node scripts/fetch-goatcounter-stats.mjs"
   }
 }
