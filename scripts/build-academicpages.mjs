@@ -53,7 +53,7 @@ const research = `<p>This page gives an overview of my research in scientific AI
 ${areas.map(a => `<h2 class="research-area" id="${a.id}">${escape(a.title)}</h2>\n${a.projects.map(([id, fig]) => projectHtml(id, fig)).join('\n<hr class="project-sep">\n')}`).join('\n')}`;
 
 // Publications page.
-const pubGroups = [['Preprints', 'preprint'], ['Refereed Journal Articles', 'journal'], ['Conference Proceedings', 'conference']];
+const pubGroups = [['Refereed Journal Articles', 'journal'], ['Conference Proceedings', 'conference'], ['Preprints', 'preprint']];
 const publications = pubGroups.map(([title, category]) => {
   const rows = papers.filter(p => p.category === category);
   return `<h2 class="pub-heading">${title}</h2>
