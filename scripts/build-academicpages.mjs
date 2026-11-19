@@ -62,7 +62,7 @@ ${rows.map(p => `  <li>${authorsHtml(p)}. “${escape(p.title)}”. <em>${escape
 </ul>`;
 }).join('\n');
 
-// News: the home page shows the six most recent items.
+// News: the home page shows every item in a scrollable box; /news/ lists them all.
 const newsItems = (await read('pages/news-items.html')).trim().split('\n').filter(Boolean);
 const pages = [
   { route: '/', nav: null, title: "Yulong Liu's Homepage", heading: null, file: 'pages/home.html' },
@@ -84,7 +84,7 @@ await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const page of pages) {
   let content = page.html ?? await read(page.file);
-  content = content.replace('{{RECENT_NEWS}}', newsItems.slice(0, 6).join('\n')).replace('{{ALL_NEWS}}', newsItems.join('\n'));
+  content = content.replace('{{RECENT_NEWS}}', newsItems.join('\n')).replace('{{ALL_NEWS}}', newsItems.join('\n'));
   const nav = pages.filter(p => p.nav).map(p => `        <li><a href="${p.route}"${p === page ? ' aria-current="page"' : ''}>${escape(p.nav)}</a></li>`).join('\n');
   const html = layout
     .replaceAll('{{TITLE}}', escape(page.route === '/' ? page.title : `${page.title} · Yulong Liu`))

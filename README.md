@@ -16,7 +16,7 @@ The earlier single-page design is kept in `site/` (see “Classic single-page de
 
 - `themes/academicpages/layout.html`: shared shell (navigation, profile sidebar, footer).
 - `themes/academicpages/pages/home.html`: biography, research focus, interests and figure carousel.
-- `themes/academicpages/pages/news-items.html`: one `<li>` per line, newest first; the home page shows the first six and `/news/` shows all.
+- `themes/academicpages/pages/news-items.html`: one `<li>` per line, newest first; the home page shows all of them in a scrollable Recent News box and `/news/` lists them all.
 - `themes/academicpages/pages/talks.html`, `awards.html` (research support, awards, academic service) and `cv.html` (education and the embedded CV).
 - `site/publications.json`: publication metadata shared by both designs. `scripts/build-academicpages.mjs` generates the Publications and Research pages from it; research groupings, figures and the three summaries missing from the JSON are set in the script.
 - `themes/academicpages/style.css` and `main.js`: styles, mobile menu, figure carousel and figure viewer.
